@@ -37,7 +37,7 @@ def vote(request, question_id):
     try:
         selected_choice = question.choice_set.get(pk=request.POST['choice'])
     except (KeyError, Choice.DoesNotExist):
-        template = 'polls/detail/html'
+        template = 'polls/detail.html'
         context = {
             'question': question,
             'error_message': "You didn't select a choice.",
